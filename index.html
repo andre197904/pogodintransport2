@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pogodin Transport — грузоперевозки и вывоз мусора в Эстонии</title>
+<meta name="description" content="Вывоз мебели, техники и строительного мусора, доставка, переезды по Эстонии. Грузчики включены. +372 53801808.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bg:'#16181d',card:'#1e2128',line:'rgba(255,255,255,.1)',fg:'#f4f2ec',mut:'#a3a6ad',pri:'#f5c518',viber:'#7360f2'},fontFamily:{display:['Unbounded','sans-serif'],sans:['Manrope','sans-serif']}}}}</script>
+<style>html{scroll-behavior:smooth}h1,h2,h3{font-family:Unbounded,sans-serif}
+.hazard{background:repeating-linear-gradient(-45deg,#f5c518 0 14px,#16181d 14px 28px)}
+.fade{background:linear-gradient(90deg,#16181d 25%,rgba(22,24,29,.6) 60%,transparent)}</style>
+</head><body class="bg-bg text-fg font-sans">
+<header class="sticky top-0 z-40 border-b border-line bg-bg/80 backdrop-blur-md"><div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+<div><div class="font-display text-base font-bold sm:text-lg">POGODIN<span class="text-pri"> TRANSPORT</span></div><div class="text-xs text-mut"><span data-k="sub"></span> · <span id="clock"></span> · Tallinn</div></div>
+<div class="flex items-center gap-3"><div class="flex rounded-full border border-line p-0.5 text-xs font-bold"><button data-l="ru" class="lb rounded-full px-3 py-1">RU</button><button data-l="est" class="lb rounded-full px-3 py-1">EST</button></div>
+<a href="tel:+37253801808" class="hidden rounded-full bg-pri px-4 py-2 text-sm font-bold text-bg sm:inline-block">+372 5380 1808</a></div></div></header>
+<section class="relative overflow-hidden"><img src="images/hero-van.jpg" alt="Pogodin Transport" class="absolute inset-0 h-full w-full object-cover"><div class="fade absolute inset-0"></div>
+<div class="relative mx-auto max-w-6xl px-5 py-24 sm:py-36"><h1 class="max-w-2xl text-4xl font-bold leading-[1.05] sm:text-6xl"><span data-k="h1a"></span><br><span data-k="h1b"></span><br><span class="text-pri" data-k="h1c"></span></h1>
+<p class="mt-6 max-w-lg text-lg text-mut" data-k="lead"></p><div class="mt-8 flex flex-wrap gap-3"><a href="tel:+37253801808" class="rounded-full bg-pri px-7 py-4 font-bold text-bg"><span data-k="call"></span>: 5380 1808</a>
+<a href="viber://chat?number=%2B37253801808" class="rounded-full border border-line bg-bg/40 px-7 py-4 font-bold backdrop-blur" data-k="viber"></a></div></div><div class="hazard relative h-2"></div></section>
+<section class="mx-auto max-w-6xl px-5 py-20"><h2 class="text-2xl font-bold sm:text-4xl" data-k="servicesT"></h2><div id="svc" class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3"></div></section>
+<section class="border-y border-line bg-card"><div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 lg:grid-cols-2"><div><h2 class="text-2xl font-bold sm:text-4xl" data-k="whyT"></h2><ul id="why" class="mt-8 space-y-4"></ul>
+<div class="mt-8 inline-block rounded-lg bg-pri px-4 py-2 font-bold text-bg" data-k="senior"></div></div><img src="images/van-cargo.jpg" alt="" loading="lazy" class="aspect-[4/3] w-full rounded-2xl object-cover"></div></section>
+<section class="mx-auto max-w-6xl px-5 py-24 text-center"><h2 class="text-2xl font-bold sm:text-4xl" data-k="priceT"></h2><p class="mx-auto mt-4 max-w-xl text-mut" data-k="price"></p>
+<a href="tel:+37253801808" class="mt-10 inline-block font-display text-4xl font-bold text-pri sm:text-6xl">5380 1808</a><p class="mt-3 text-sm uppercase tracking-widest text-mut">Алексей / Aleksei</p><p class="mt-8 text-lg font-bold" data-k="today"></p></section>
+<footer class="border-t border-line px-5 py-8 pb-28 text-center text-sm text-mut sm:pb-8">© 2026 Pogodin Transport. <span data-k="rights"></span></footer>
+<div class="fixed bottom-5 right-5 z-40 flex flex-col gap-3"><a href="viber://chat?number=%2B37253801808" class="grid h-14 w-14 place-items-center rounded-full bg-viber text-2xl shadow-lg">💬</a><a href="tel:+37253801808" class="grid h-14 w-14 place-items-center rounded-full bg-pri text-2xl shadow-lg">📞</a></div>
+<div id="modal" class="fixed inset-0 z-50 hidden place-items-center bg-bg/80 p-5 backdrop-blur-sm"><div class="relative w-full max-w-md rounded-2xl border border-line bg-card p-7" onclick="event.stopPropagation()">
+<button onclick="closeM()" class="absolute right-4 top-3 text-2xl text-mut">×</button><div id="mn" class="font-display text-sm text-pri"></div><h3 id="mt" class="mt-2 text-xl font-bold"></h3><p id="md" class="mt-4 text-mut"></p>
+<a href="tel:+37253801808" class="mt-6 block rounded-full bg-pri py-3 text-center font-bold text-bg"><span data-k="order"></span>: 5380 1808</a></div></div>
+<script>
+const S=[
+  {"ru": ["Вывоз старой мебели", "Диваны, шкафы, кухни", "Аккуратно вынесем и вывезем диваны, шкафы, кухни и другую старую мебель из вашей квартиры или дома. Грузчики уже включены в стоимость!"], "est": ["Vana mööbli äravedu", "Diivanid, kapid, köögid", "Tõstame ja viime ära diivanid, kapid, köögid ja muu vana mööbli."] },
+  {"ru": ["Вывоз бытовой техники", "Холодильники, стиралки", "Безопасно отключим, вынесем и доставим на утилизацию или перевезём холодильники, стиральные машины и другую технику."], "est": ["Kodutehnika äravedu", "Külmkapid, pesumasinad", "Võtame lahti ja viime ära külmkapid, pesumasinad ja muu tehnika."] },
+  {"ru": ["Строительный мусор", "После ремонта и стройки", "Очистим помещение от мусора после ремонта, старых обоев, плитки, бетонной крошки и стройматериалов."], "est": ["Ehitusprahi äravedu", "Pärast remonti ja ehitust", "Puhastame ruumid ehitusprahist, vana tapeedist, plaatidest ja prahist."] },
+  {"ru": ["Доставка стройматериалов", "Из магазина на объект", "Купим и привезём любые стройматериалы из магазина прямо на ваш объект или квартиру с подъемом на этаж."], "est": ["Ehitusmaterjalide toomine", "Poest otse objektile", "Toome poest ehitusmaterjalid otse teie objektile või korterisse."] },
+  {"ru": ["Доставка мебели и техники", "Новое — бережно", "Бережная доставка новой мебели и бытовой техники из магазинов с гарантией сохранности."], "est": ["Mööbli ja tehnika toomine", "Uus — hoolikalt", "Hoolikas uue mööbli ja kodutehnika kohaletoomine poodidest."] },
+  {"ru": ["Переезды", "В любой город Эстонии", "Организуем квартирный или офисный переезд в любой город Эстонии быстро и без лишних хлопот."], "est": ["Kolimised", "Igasse Eesti linna", "Organiseerime korteri- või kontorikolimise igasse Eestimaa linna."] },
+  {"ru": ["Вывоз металла", "С участков и гаражей", "Соберём и вывезем металлический лом с дачных участков, гаражей и территорий по выгодной цене."], "est": ["Metalli äravedu", "Kruntidelt ja garaažidest", "Korjame ja viime ära metallijäätmed suvilatest, garaažidest ja maadelt."] },
+  {"ru": ["Демонтаж", "Квартиры, гаражи", "Аккуратный демонтаж стен, перегородок, старой сантехники, плитки в квартирах и гаражах."], "est": ["Lammutustööd", "Korterid, garaažid", "Hoolikad lammutustööd korterites, garaažides ja ruumides."] },
+  {"ru": ["Освобождение помещений", "Квартиры, дома, гаражи", "Полное освобождение квартир, домов, подвалов и гаражей от хлама под ключ."], "est": ["Ruumide tühjendamine", "Korterid, majad, garaažid", "Korterite, majade, keldrite ja garaažide täielik vabastamine vanast kraamist."] },
+  {"ru": ["Доставка земли", "Из магазина на участок", "Привезем плодородную землю, грунт или песок из магазина прямо на ваш дачный участок."], "est": ["Mulla kohaletoomine", "Poest krundi peale", "Toome viljaka mulla, kruusa või liiva otse teie suvilasse."] }];
+const T={
+  ru: {
+    sub: "Грузоперевозки в Эстонии",
+    h1a: "Быстро.", h1b: "Надёжно.", h1c: "Аккуратно.",
+    lead: "Нужно избавиться от хлама или перевезти вещи? Сделаем всё за вас — без нервов, без задержек и по честной цене.",
+    call: "Позвонить", viber: "Написать в Viber",
+    servicesT: "Чем мы занимаемся", more: "Подробнее",
+    whyT: "Почему выбирают нас",
+    why: ["Приезжаем быстро — часто в день обращения", "Работаем аккуратно — ничего не ломаем", "Грузчики включены — вам не нужно таскать", "Чисто после нас — уберём за собой", "Честная цена без скрытых доплат", "Работаем без выходных"],
+    senior: "Для пенсионеров — отдельная скидка",
+    priceT: "Стоимость и заказ",
+    price: "Адекватные цены и скидки при больших объёмах. Быстро рассчитаем стоимость и приедем в удобное время.",
+    today: "Освободим ваше пространство уже сегодня",
+    order: "Позвонить и заказать",
+    rights: "Все права защищены.",
+  },
+  est: {
+    sub: "Kaubavedu Eestis",
+    h1a: "Kiiresti.", h1b: "Usaldusväärselt.", h1c: "Hoolega.",
+    lead: "Vaja vabaneda vanast kraamist või vedada asju? Teeme kõik teie eest — ilma närvide, viivitusteta ja ausa hinnaga.",
+    call: "Helista", viber: "Kirjuta Viberis",
+    servicesT: "Millega me tegeleme", more: "Lähemalt",
+    whyT: "Miks valitakse meid",
+    why: ["Tuleme kiiresti — sageli pöördumise päeval", "Töötame hoolikalt — midagi ei purune", "Laadijad on hinna sees", "Puhas töö — koristame enda järel", "Aus hind ilma varjatud lisatasudeta", "Töötame ilma puhkepäevadeta"],
+    senior: "Pensionäridele eraldi soodustus",
+    priceT: "Hind ja tellimine",
+    price: "Mõistlikud hinnad ja soodustused suurte mahtude korral. Arvutame kiiresti hinna ja tuleme sobival ajal.",
+    today: "Vabastame teie ruumi juba täna",
+    order: "Helista ja telli",
+    rights: "Kõik õigused kaitstud.",
+  },
+};
+let lang='ru',cur=null;const m=document.getElementById('modal');
+function render(){const L=T[lang];document.querySelectorAll('[data-k]').forEach(e=>e.textContent=L[e.dataset.k]);
+document.querySelectorAll('.lb').forEach(b=>b.className='lb rounded-full px-3 py-1 '+(b.dataset.l===lang?'bg-pri text-bg':'text-mut'));
+document.getElementById('why').innerHTML=L.why.map(w=>'<li class="flex gap-3"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-pri"></span>'+w+'</li>').join('');
+document.getElementById('svc').innerHTML=S.map((s,i)=>'<button onclick="openM('+i+')" class="group flex items-start gap-4 rounded-xl border border-line bg-card p-5 text-left transition hover:-translate-y-0.5 hover:border-pri"><span class="font-display text-sm text-pri">'+String(i+1).padStart(2,'0')+'</span><span class="flex-1"><span class="block font-bold">'+s[lang][0]+'</span><span class="mt-1 block text-sm text-mut">'+s[lang][1]+'</span></span><span class="text-mut group-hover:text-pri">→</span></button>').join('');
+if(cur!==null)openM(cur);}
+function openM(i){cur=i;document.getElementById('mn').textContent=String(i+1).padStart(2,'0');document.getElementById('mt').textContent=S[i][lang][0];document.getElementById('md').textContent=S[i][lang][2];m.classList.remove('hidden');m.classList.add('grid');}
+function closeM(){cur=null;m.classList.add('hidden');m.classList.remove('grid');}
+m.onclick=closeM;document.onkeydown=e=>e.key==='Escape'&&closeM();
+document.querySelectorAll('.lb').forEach(b=>b.onclick=()=>{lang=b.dataset.l;render();});
+const tick=()=>document.getElementById('clock').textContent=new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Tallinn',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date());
+tick();setInterval(tick,1000);render();
+</script></body></html>
